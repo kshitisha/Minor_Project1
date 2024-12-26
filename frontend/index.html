@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Forgery Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">
+                Image Forgery Detection
+            </h1>
+        </header>
+
+        <form id="forgeryForm" method="post" enctype="multipart/form-data" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label for="originalImage" class="block mb-2 font-semibold text-gray-700">
+                        Original Image
+                    </label>
+                    <div id="originalDropZone" class="drop-zone">
+                        <input type="file" 
+                               id="originalImage" 
+                               name="originalImage" 
+                               accept="image/*" 
+                               required>
+                        <p>Upload original image</p>
+                        <img id="originalPreview" 
+                             class="preview-image hidden" 
+                             src="#" 
+                             alt="Preview of original image">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="suspectImage" class="block mb-2 font-semibold text-gray-700">
+                        Suspect Image
+                    </label>
+                    <div id="suspectDropZone" class="drop-zone">
+                        <input type="file" 
+                               id="suspectImage" 
+                               name="suspectImage" 
+                               accept="image/*" 
+                               required>
+                        <p>Upload suspect image</p>
+                        <img id="suspectPreview" 
+                             class="preview-image hidden" 
+                             src="#" 
+                             alt="Preview of suspect image">
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultContainer" 
+                 class="result-container hidden" 
+                 role="alert" 
+                 aria-live="assertive">
+                
+            </div>
+
+            <button type="submit" 
+                    id="submitButton" 
+                    class="btn"
+                    aria-label="Detect Image Forgery">
+                Detect Forgery
+            </button>
+        </form>
+    </div>
+    <script src="/public/script.js"></script>
+</body>
+</html>
