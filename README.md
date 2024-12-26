@@ -1,4 +1,4 @@
-Image Classification through Handcrafted Method using Machine Algorithms
+Image Classification through Handcrafted Features using Machine Learning Algorithms
 
 A C++ application for detecting image forgery using SURF (Speeded Up Robust Features) feature detection and matching algorithms.
 
